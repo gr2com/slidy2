@@ -1,4 +1,4 @@
-package com.example.slidy2
+package com.gersonramos.slidy2
 
 import io.flutter.embedding.android.FlutterActivity
 
