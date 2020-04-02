@@ -9,31 +9,38 @@ part of 'auth_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$AuthController on _AuthControllerBase, Store {
-  final _$valueAtom = Atom(name: '_AuthControllerBase.value');
+  final _$userAtom = Atom(name: '_AuthControllerBase.user');
 
   @override
-  int get value {
-    _$valueAtom.context.enforceReadPolicy(_$valueAtom);
-    _$valueAtom.reportObserved();
-    return super.value;
+  FirebaseUser get user {
+    _$userAtom.context.enforceReadPolicy(_$userAtom);
+    _$userAtom.reportObserved();
+    return super.user;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.context.conditionallyRunInAction(() {
-      super.value = value;
-      _$valueAtom.reportChanged();
-    }, _$valueAtom, name: '${_$valueAtom.name}_set');
+  set user(FirebaseUser value) {
+    _$userAtom.context.conditionallyRunInAction(() {
+      super.user = value;
+      _$userAtom.reportChanged();
+    }, _$userAtom, name: '${_$userAtom.name}_set');
+  }
+
+  final _$loginWithGoogleAsyncAction = AsyncAction('loginWithGoogle');
+
+  @override
+  Future<dynamic> loginWithGoogle() {
+    return _$loginWithGoogleAsyncAction.run(() => super.loginWithGoogle());
   }
 
   final _$_AuthControllerBaseActionController =
       ActionController(name: '_AuthControllerBase');
 
   @override
-  void increment() {
+  dynamic setUser(FirebaseUser value) {
     final _$actionInfo = _$_AuthControllerBaseActionController.startAction();
     try {
-      return super.increment();
+      return super.setUser(value);
     } finally {
       _$_AuthControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -41,7 +48,7 @@ mixin _$AuthController on _AuthControllerBase, Store {
 
   @override
   String toString() {
-    final string = 'value: ${value.toString()}';
+    final string = 'user: ${user.toString()}';
     return '{$string}';
   }
 }
