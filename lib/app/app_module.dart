@@ -6,7 +6,6 @@ import 'package:slidy2/app/modules/home/home_module.dart';
 import 'package:slidy2/app/modules/shared/auth/auth_controller.dart';
 import 'package:slidy2/app/modules/shared/auth/repositories/auth_repository.dart';
 import 'package:slidy2/app/modules/shared/auth/repositories/auth_repository_interface.dart';
-import 'package:slidy2/app/modules/shared/repositories/localstorage/local_storage_hive.dart';
 import 'package:slidy2/app/modules/shared/repositories/localstorage/local_storage_interface.dart';
 import 'package:slidy2/app/modules/shared/repositories/localstorage/local_storage_share.dart';
 

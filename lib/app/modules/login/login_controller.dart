@@ -8,19 +8,18 @@ class LoginController = _LoginBase with _$LoginController;
 
 abstract class _LoginBase with Store {
   AuthController auth = Modular.get();
-  
+
   @observable
   bool loading = false;
 
   @action
-  void loginWithGoogle() async {
+  Future loginWithGoogle() async {
     try {
       loading = true;
-      await auth.loginWithGoogle(); 
-      Modular.to.pushReplacementNamed('/home');    
+      await auth.loginWithGoogle();
+      Modular.to.pushReplacementNamed('/home');
     } catch (e) {
       loading = false;
     }
-
   }
 }
